@@ -3,10 +3,16 @@ import './App.css';
 // import User from './User';
 import React, {Component} from 'react';
 function App() {
+  function Apple(){
+    return(
+      <div>Apple Component</div>
+    )
+  }
   return (
     <div className="App">
       <h1>Hello World</h1>
       <User/>
+      <Apple></Apple>
     </div>
   );
 }
