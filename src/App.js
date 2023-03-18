@@ -1,27 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-// import User from './User';
-import React, {Component} from 'react';
+import User from './User';
+import React from 'react';
 function App() {
-  function Apple(){
-    return(
-      <div>Apple Component</div>
-    )
-  }
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <User/>
-      <Apple></Apple>
+      <h1>Hello , JSX !</h1>
+      <h1>10 and 20 = {10+20}</h1>
+      <User></User>
     </div>
   );
 }
 
-class User extends Component{
-  render(){
-      return(<h1>Hello from User</h1>)
-  }
-}
-
+// function App(){
+//   return React.createElement('div',null, 'Hello World')
+// }
 
 export default App;
