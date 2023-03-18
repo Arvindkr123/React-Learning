@@ -3,11 +3,17 @@ import './App.css';
 import User from './User';
 import React from 'react';
 function App() {
+  let data= 'Arvind Kumar Singh Thakur'
+  function Apple(){
+    data = 'JACK SPARROW'
+    alert(data)
+  }
   return (
     <div className="App">
-      <h1>Hello , JSX !</h1>
-      <h1>10 and 20 = {10+20}</h1>
-      <User></User>
+      <h1>Click event with function {data}</h1>
+      <button onClick={Apple}>Click Me</button>
+      <button onClick={()=>alert('hello')}>RANCHO</button>
+      <button onClick={()=>Apple()}>RANCHO Arrow</button>
     </div>
   );
 }
