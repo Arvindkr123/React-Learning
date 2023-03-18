@@ -1,52 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from 'react';
-
-// function App() {
-//   const [data, setData] = useState('anil')
-//   function UpdateName(){
-//     setData('Arvind Kumar')
-//   }
-//   return (
-//     <div className='App'>
-//       <h1>{data}</h1>
-//       <button onClick={UpdateName}>Update Data</button>
-//     </div>
-//   )
-// }
-function App() {
-  const [data, setData] = useState(0)
-  function UpdateName(){
-    setData(data+1)
+import React, {Component} from 'react';
+// what is State state is a container which is just used like the variable
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      data : 0
+    }
   }
-  console.log('___________________________________');
-  return (
-    <div className='App'>
-      <h1>{data}</h1>
-      <button onClick={UpdateName}>Update Data</button>
-    </div>
-  )
+  apple(){
+    this.setState({data:this.state.data+1})
+    // alert('apple');
+  }
+  render(){
+    return(
+      <div className='App'>
+        <h1>Hello World !</h1>
+        <h1>{this.state.data}</h1>
+        <button onClick={()=>this.apple()}>Click Me</button>
+      </div>
+    )
+  }
 }
-
-// This is the problem we can't change the value in variable that's why we use the state and props
-// function App() {
-//   let data= 'Arvind Kumar Singh Thakur'
-//   function UpdateData(){
-//     data = 'Chandler Bing';
-//     alert(data)
-//   }
-//   return (
-//     <div className="App">
-//       <h1>{data}</h1>
-//       <button onClick={UpdateData}>Click Me</button>
-//     </div>
-//   );
-// }
-
-// function App(){
-//   return React.createElement('div',null, 'Hello World')
-// }
-
-
 
 export default App;
