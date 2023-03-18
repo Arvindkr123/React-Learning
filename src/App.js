@@ -13,8 +13,21 @@ function App() {
       <User/>
       <User/>
       <User/>
+      <Hello/>
+      <Hello/>
+      <Hello/>
+      <Hello/>
     </div>
   );
+}
+
+function Hello(){
+  return (
+    <div>
+      <h2>I Love my India</h2>
+      <p>Reuse component</p>
+    </div>
+  )
 }
 
 export default App;
