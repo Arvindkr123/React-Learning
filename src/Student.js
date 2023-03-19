@@ -1,23 +1,15 @@
+import React from "react";
 
-
-// function Student(props){
-//     console.log(props.name);
-//     return(
-//         <div style={{backgroundColor:'skyBlue'}}>
-//             <h2>Name : {props.name}</h2>
-//             <h4>Email : {props.email}</h4>
-//             <h4>Address : {props.other.address}</h4>
-//             <h4>Phone : {props.other.phone}</h4>
-//         </div>
-//     )
-// }
-function Student(props) {
-    console.log(props.name);
-    return (
-        <div style={{ backgroundColor: 'skyBlue' }}>
-            <h2>Hello  {props.name}</h2>
-        </div>
-    )
+class Student extends React.Component {
+    render() {
+        console.log(this.props);
+        return (
+            <div style={{backgroundColor:'skyblue'}}>
+                <h1>Hello {this.props.name}</h1>
+                <h3>Hello {this.props.email}</h3>
+            </div>
+        )
+    }
 }
 
 export default Student;
