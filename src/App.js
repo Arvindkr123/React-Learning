@@ -1,37 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-import Student from './Student';
 import React, {useState} from 'react';
 
-class App extends React.Component{
-  constructor(){
-    super();
-    this.state={
-      name:'Arvind'
-    }
-
+function App(){
+  const [data, setData] = useState(null)
+  const [print, setPrint] = useState(false);
+  function getData(val){
+    console.log(val.target.value);
+    setData(val.target.value)
+    setPrint(false)
   }
-  render(){
-    return(
-      <div className='App'>
-        <h1>props :)</h1>
-        <Student name={this.state.name} email={'thakurarvindkr10@gmail.com'}></Student>
-        <button onClick={()=>this.setState({name:'Arvind Thakur'})}>Update Name</button>
-      </div>
-    )
-  }
+  return(
+    <div className='App'>
+      {
+        print?
+        <h3>{data}</h3>
+        :null
+      }
+      <h1>Get Input Box Value :)</h1>
+      <input type="text" onChange={getData}/>
+      <button onClick={()=>setPrint(true)}>Print Data</button>
+      <p>Question : Can we send in props Html code or not yes we Can with help of  
+        <br></br><strong>If you using class Component <code>this.props.children</code></strong><br></br>
+        <strong>If you using function Component <code>this.children</code></strong>
+      </p>
+    </div>
+  )
 }
-
-
-// function App(){
-//   return(
-//     <div className='App'>
-//       <h1>Props in React :)</h1>
-//       <Student name={'Arvind'} email={'thakurarvindkr10@gmail.com'}></Student>
-//       <Student name={'Ram'} email={'thakurarvindkr10@gmail.com'}></Student>
-//       <Student name={'Akshita'} email={'thakurarvindkr10@gmail.com'}></Student>
-//     </div>
-//   )
-// }
-
 export default App; 
