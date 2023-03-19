@@ -3,28 +3,29 @@ import './App.css';
 import React, {useState} from 'react';
 
 function App(){
-  const[status, setStatus]= useState(true);
-  return (
-    <div className='App'>
-      {
-      status?<h1>Hide and show the frameWork</h1>:null
-      }
-      <button onClick={()=>setStatus(!status)}>Toggle</button>
+  const[name, setName] = useState('')
+  const[tnc, settnc] = useState(false)
+  const[interest, Setinterest] = useState('')
 
-      <p>Question :what the diff b/w jQuery and React to use the hide and show function </p>
+  function getFormData(e){
+    e.preventDefault();
+    console.log(name, tnc, interest);
+  }
+  return(
+    <div className='App'>
+      <h1>Handle form in React</h1>
+      <form onSubmit={getFormData}>
+        <input type="text" placeholder='enter your name' onChange={(e)=>setName(e.target.value)}/><br/><br/>
+        <select onChange={(e)=>Setinterest(e.target.value)}>
+          <option>select</option>
+          <option>Marvel</option>
+          <option>DC</option>
+        </select><br/><br/>
+        <input type="checkbox" onChange={(e)=>settnc(e.target.checked)} /  ><span>Accept Terms and conditions</span><br/><br/>
+        <button type='submit'>Submit</button>
+        <button>Clear</button>
+      </form>
     </div>
   )
 }
-// function App(){
-//   const[status, setStatus]= useState(true);
-//   return (
-//     <div className='App'>
-//       {
-//       status?<h1>Hide and show the frameWork</h1>:null
-//       }
-//       <button onClick={()=>setStatus(false)}>Hide</button>
-//       <button onClick={()=>setStatus(true)}>show</button>
-//     </div>
-//   )
-// }
 export default App; 
