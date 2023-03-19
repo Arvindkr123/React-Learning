@@ -15,7 +15,7 @@ function Student(props) {
     console.log(props.name);
     return (
         <div style={{ backgroundColor: 'skyBlue' }}>
-            <h2>Name : {props.name}</h2>
+            <h2>Hello  {props.name}</h2>
         </div>
     )
 }

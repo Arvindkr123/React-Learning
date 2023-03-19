@@ -3,6 +3,16 @@ import './App.css';
 import Student from './Student';
 import React, {useState} from 'react';
 
+function App(){
+  const [name, setName] = useState('Arvind Kumar singh Thakur')
+  return(
+    <div className='App'>
+      <h1>Props in React :)</h1>
+      <Student name={name}></Student>
+      <button onClick={()=>{setName('Akshita')}}>Update Name</button>
+    </div>
+  )
+}
 // function App(){
 //   return(
 //     <div className='App'>
@@ -23,15 +33,5 @@ import React, {useState} from 'react';
 //     </div>
 //   )
 // }
-function App(){
-  const [name, setName] = useState('Arvind Kumar singh Thakur')
-  return(
-    <div className='App'>
-      <h1>Props in React :)</h1>
-      <Student name={name}></Student>
-      <button onClick={()=>{setName('Hello Akshita')}}>Update Name</button>
-    </div>
-  )
-}
 
 export default App;
