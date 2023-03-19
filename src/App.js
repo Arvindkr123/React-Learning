@@ -3,28 +3,28 @@ import './App.css';
 import React, {useState} from 'react';
 
 function App(){
-  const [data, setData] = useState(null)
-  const [print, setPrint] = useState(false);
-  function getData(val){
-    console.log(val.target.value);
-    setData(val.target.value)
-    setPrint(false)
-  }
-  return(
+  const[status, setStatus]= useState(true);
+  return (
     <div className='App'>
       {
-        print?
-        <h3>{data}</h3>
-        :null
+      status?<h1>Hide and show the frameWork</h1>:null
       }
-      <h1>Get Input Box Value :)</h1>
-      <input type="text" onChange={getData}/>
-      <button onClick={()=>setPrint(true)}>Print Data</button>
-      <p>Question : Can we send in props Html code or not yes we Can with help of  
-        <br></br><strong>If you using class Component <code>this.props.children</code></strong><br></br>
-        <strong>If you using function Component <code>this.children</code></strong>
-      </p>
+      <button onClick={()=>setStatus(!status)}>Toggle</button>
+
+      <p>Question :what the diff b/w jQuery and React to use the hide and show function </p>
     </div>
   )
 }
+// function App(){
+//   const[status, setStatus]= useState(true);
+//   return (
+//     <div className='App'>
+//       {
+//       status?<h1>Hide and show the frameWork</h1>:null
+//       }
+//       <button onClick={()=>setStatus(false)}>Hide</button>
+//       <button onClick={()=>setStatus(true)}>show</button>
+//     </div>
+//   )
+// }
 export default App; 
