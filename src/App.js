@@ -2,39 +2,45 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
-// class App extends React.Component {
-//   constructor() {
-//     super();
-//     console.log('Constructor called');
-//   }
-
-//   render() {
-//     console.log('render called');
-//     return (
-//       <div className='App'>
-//         <h1>Constructor Life Cycle Methods</h1>
-//         <h1>Hello World ! </h1>
-//       </div>
-//     )
-//   }
-// }
-class App extends React.Component {
-  constructor() {
+class App extends React.Component{
+  constructor(){
     super();
     this.state = {
-      data :'Arvind'
+      name:'arvind'
     }
+     
   }
-
-  render() {
+  componentDidMount(){
+    console.log('componentDidMount called')
+  }
+  render(){
+    console.log('render called')
     return (
       <div className='App'>
-        <h1>Constructor Life Cycle Methods</h1>
-        <h1>Hello World ! {this.state.data} </h1>
+        <h1>ComponentDidMount life Cycle Method {this.state.name}</h1>
+        <button onClick={()=>this.setState({name:'Thakur'})}>Update Name</button>
       </div>
     )
   }
 }
 
+// class App extends React.Component{
+//   constructor(){
+//     super();
+//     console.log('Constructor called')
+     
+//   }
+//   componentDidMount(){
+//     console.log('componentDidMount called')
+//   }
+//   render(){
+//     console.log('render called')
+//     return (
+//       <div className='App'>
+//         <h1>ComponentDidMount life Cycle Method</h1>
+//       </div>
+//     )
+//   }
+// }
 
 export default App; 
