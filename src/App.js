@@ -1,51 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Student from './Student';
 import React from 'react';
 
+
 class App extends React.Component {
-  constructor() {
+  constructor(){
     super();
-    this.state = {
-      count: 0
-    }
-  }
-  componentDidUpdate(){
-    console.log('componentDidUpdate')
-  }
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate')
-    if (this.state.count >= 5 && this.state.count < 10) {
-      return true;
+    this.state={
+      show:true
     }
   }
   render() {
     return (
       <div className='App'>
-        <h1>Should Component Update {this.state.count}</h1>
-        <button onClick={() => { this.setState({ count: this.state.count + 1 }) }}>Update Count</button>
+        {/* <h1>Component will unmount</h1> */}
+        {
+          this.state.show?<Student/>:<h1>Child Component removed</h1>
+        }
+        <button onClick={()=>{this.setState({show:!this.state.show
+        })}}>Toggle child Component</button>
       </div >
     )
   }
 }
-// class App extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       count: 0
-//     }
-//   }
-//   shouldComponentUpdate(){
-//     console.log('shouldComponentUpdate', this.state.count)
-//     return true;
-//   }
-//   render() {
-//     return (
-//       <div className='App'>
-//         <h1>Should Component Update {this.state.count}</h1>
-//         <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Count</button>
-//       </div >
-//     )
-//   }
-// }
 
 export default App; 
