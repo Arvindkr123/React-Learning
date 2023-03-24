@@ -1,22 +1,13 @@
-import React from 'react'
+import React, {PureComponent} from 'react'
 
-function User(props){
-    const data = {name:'Arvind Kumar', email:`thakurarvindkr10@gmail.com`}
-    return(
-        <div>
-            {/* <h1>User Name : </h1> */}
-            <button onClick={()=>props.alert(data)}>Click Me</button>
-        </div>
+class User extends PureComponent {
+  render(){
+    return (
+      <div>
+        <h1>User Component {this.props.count}</h1>
+      </div>
     )
+  }
 }
 
-// function User(props) {
-//   return (
-//     <div>
-//       <h1>User Name : {props.name} </h1>
-//       <button>Click Me</button>
-//     </div>
-//   )
-// }
-
-export default User
+export default User;
