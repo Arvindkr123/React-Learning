@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Fragment } from 'react'
-import cols from './cols';
+import Cols from './cols';
 
 /* React Fragment
   it's the pattern to handle the multiple component and elements it can be used as wrapper
@@ -14,7 +14,13 @@ function App() {
       <table>
         <tbody>
           <tr>
-            <cols></cols>
+            <Cols></Cols>
+            <Cols></Cols>
+            <Cols></Cols>
+            <Cols></Cols>
+            <Cols></Cols>
+            <Cols></Cols>
+            <Cols></Cols>
           </tr>
         </tbody>
       </table>
