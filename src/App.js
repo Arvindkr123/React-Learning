@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {createRef} from 'react'
 
-import React, { useState, useMemo} from 'react'
-
-function App() {
-  const[count, setCount] = useState(0);
-  const[item, setItem] = useState(10);
-  const multiCount = useMemo(()=>{
-    console.log('Use memo')
-    return count*5;
-  }, [count])
-  return (
-    <div className='App'>
-      <h1>Use Memo hoock in React</h1>
-      <h2>Count : {count}</h2>
-      <h2>Item : {item}</h2>
-      <h2>multiCount : {multiCount}</h2>
-      <button onClick={()=>setCount(count+1)}>Update count</button>
-      <button onClick={()=>setItem(item*10)}>Update item</button>
-    </div>
-  )
+class App extends React.Component{
+  constructor(){
+    super();
+    this.inputRef = createRef();
+  }
+  componentDidMount(){
+    // console.log(this.inputRef.current.value='10000')
+  }
+  getValue(){
+    console.log(this.inputRef.current.value)
+    this.inputRef.current.style.color='red'
+    this.inputRef.current.style.backgroundColor='black'
+  }
+  render(){
+    return(
+      <div className='App'>
+        <h1>Ref in React</h1>
+        <input type="text" ref ={this.inputRef}/>
+        <button onClick={()=>this.getValue()}>Check Ref</button>
+      </div>
+    )
+  }
 }
 
-export default App
+export default App;
