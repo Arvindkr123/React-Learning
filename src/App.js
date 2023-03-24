@@ -1,64 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import React, { Fragment } from 'react'
-import cols from './cols';
+import User from './User';
 
-/* React Fragment
-  it's the pattern to handle the multiple component and elements it can be used as wrapper
- */
+import React from 'react'
 
 function App() {
+  function ParentAlert(data) {
+    console.log(data)
+    return alert(`${data.name} ${data.email}`)
+  }
   return (
     <div className='App'>
-      <h1>React Fragment</h1>
-      <table>
-        <tbody>
-          <tr>
-            <cols></cols>
-          </tr>
-        </tbody>
-      </table>
+      <h1>Send data child to parent Component ( AKA Lifting stateUP)</h1>
+      <User alert={ParentAlert} />
     </div>
   )
 }
-
 // function App() {
+//   let data = 'Anil Sidhu'
 //   return (
 //     <div className='App'>
-//       <h1>Hello React Fragment</h1>
-//       <h1>Hello React Fragment</h1>
-//     </div>
-//   )
-// }
-// function App() {
-//   return (
-//     <>
-//       <h1>Hello React Fragment</h1>
-//       <h1>Hello React Fragment</h1>
-//     </>
-//   )
-// }
-// function App() {
-//   return (
-//     <Fragment>
-//       <h1>Hello React Fragment</h1>
-//       <h1>Hello React Fragment</h1>
-//     </Fragment>
-//   )
-// }
-// function App() {
-//   return (
-//     <React.Fragment>
-//       <h1>Hello React Fragment</h1>
-//       <h1>Hello React Fragment</h1>
-//     </React.Fragment>
-//   )
-// }
-// function App() {
-//   return (
-//     <div className='App'>
-//       <h1>Hello React Fragment</h1>
-//       <h1>Hello React Fragment</h1>
+//       <h1>Send data child to parent Component ( AKA Lifting stateUP)</h1>
+//       <User name={data}/>
 //     </div>
 //   )
 // }
