@@ -4,9 +4,9 @@ function Navbar() {
     return (
         <div>
             <ul style={{listStyle:'none'}} className='hello'>
-                <li><NavLink style={{color:'red'}} className='Nav-bar-links' to="/">Home</NavLink><br /></li>
-                <li><NavLink className='Nav-bar-links' to="/about">About</NavLink></li>
-                <li><NavLink className='Nav-bar-links' to="/contact">Contact</NavLink></li>
+                <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/">Home</NavLink><br /></li>
+                <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/about">About</NavLink></li>
+                <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/contact">Contact</NavLink></li>
                 {/* <li><Link to="/user/:name">User</Link></li> */}
             </ul>
         </div>
