@@ -8,10 +8,11 @@ function Navbar() {
                 <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/about">About</NavLink></li>
                 <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/contact">Contact</NavLink></li>
                 <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/filter">Filter</NavLink></li>
+                <li><NavLink style={({isActive})=>{return{color:isActive?'green':'red'}}} className='Nav-bar-links' to="/login">Login</NavLink></li>
                 {/* <li><Link to="/user/:name">User</Link></li> */}
             </ul>
         </div>
     )
 }
 
-export default Navbar
+export default Navbar;

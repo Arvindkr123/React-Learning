@@ -12,6 +12,8 @@ import Filter from './Filter';
 import Channels from './Channels';
 import Company from './Company';
 import Other from './Other';
+import Login from './Login';
+import Protected from './Protected';
 
 function App() {
   return (
@@ -20,16 +22,17 @@ function App() {
       <BR>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/' element={<Protected Component={Home} />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<Protected Component={About} />} />
 
-          <Route path='/contact/' element={<Contact />}>
-              <Route path='channel' element={<Channels></Channels>}/>
-              <Route path='company' element={<Company/>}/>
-              <Route path='other' element={<Other/>}/>
+          <Route path='/contact/' element={<Protected Component={Contact} />}>
+            <Route path='channel' element={<Channels></Channels>} />
+            <Route path='company' element={<Company />} />
+            <Route path='other' element={<Other />} />
           </Route>
           <Route path='/user/:name' element={<User />} />
-          <Route path='/filter' element={<Filter />} />
+          <Route path='/filter' element={<Protected Component={Filter} />} />
           <Route path='/*' element={<Page404 />} />
         </Routes>
         {/* <Navbar/> */}
