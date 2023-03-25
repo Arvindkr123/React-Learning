@@ -14,6 +14,15 @@ function About() {
                 <li>
                     <Link to="/contact">Go to Contact page</Link>
                 </li>
+                <li>
+                    <Link to="/user/Arvind">Go to Arvind page</Link>
+                </li>
+                <li>
+                    <Link to="/user/Ram">Go to Ram page</Link>
+                </li>
+                <li>
+                    <Link to="/user/Bruce">Go to Bruce page</Link>
+                </li>
             </ul>
         </div>
     )

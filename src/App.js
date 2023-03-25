@@ -7,6 +7,7 @@ import Navbar from './Navbar';
 import React from 'react'
 import Page404 from './Page404';
 import Contact from './Contact';
+import User from './User';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/user/:name' element={<User/>} />
           <Route path='/*' element={<Page404/>} />
         </Routes>
       {/* <Navbar/> */}
