@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function About() {
+    let location = useLocation();
+    console.log(location)
     return (
         <div>
             <h1>About Page</h1>
@@ -15,7 +17,7 @@ function About() {
                     <Link to="/contact">Go to Contact page</Link>
                 </li>
                 <li>
-                    <Link to="/user/Arvind">Go to Arvind page</Link>
+                    <Link to="/user/Arvind" state={{name:'Arvind Kumar singh Thakur', age:22}}>Go to Arvind page</Link>
                 </li>
                 <li>
                     <Link to="/user/Ram">Go to Ram page</Link>
