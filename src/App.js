@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as BR, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as BR, Routes, Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Navbar from './Navbar';
@@ -9,22 +9,30 @@ import Page404 from './Page404';
 import Contact from './Contact';
 import User from './User';
 import Filter from './Filter';
+import Channels from './Channels';
+import Company from './Company';
+import Other from './Other';
 
 function App() {
   return (
     <div className='App'>
       {/* <h1>Router in React</h1> */}
       <BR>
-      <Navbar/>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact/>} />
-          <Route path='/user/:name' element={<User/>} />
-          <Route path='/filter' element={<Filter/>} />
-          <Route path='/*' element={<Page404/>} />
+
+          <Route path='/contact/' element={<Contact />}>
+              <Route path='channel' element={<Channels></Channels>}/>
+              <Route path='company' element={<Company/>}/>
+              <Route path='other' element={<Other/>}/>
+          </Route>
+          <Route path='/user/:name' element={<User />} />
+          <Route path='/filter' element={<Filter />} />
+          <Route path='/*' element={<Page404 />} />
         </Routes>
-      {/* <Navbar/> */}
+        {/* <Navbar/> */}
       </BR>
     </div>
   )
