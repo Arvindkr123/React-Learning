@@ -8,6 +8,7 @@ import React from 'react'
 import Page404 from './Page404';
 import Contact from './Contact';
 import User from './User';
+import Filter from './Filter';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/user/:name' element={<User/>} />
+          <Route path='/filter' element={<Filter/>} />
           <Route path='/*' element={<Page404/>} />
         </Routes>
       {/* <Navbar/> */}
