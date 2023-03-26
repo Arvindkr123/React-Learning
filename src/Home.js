@@ -1,24 +1,13 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import Hello from './Component/Hello';
 
 const Home = () => {
-  return (
-    <>
-   <header>
-        <a href='#'>Logo</a>
-        <nav>
-            <ul style={{listStyle:'none', textDecoration:'none'}}>
-                <li>
-                    <NavLink to='/'>Home</NavLink>
-                </li>
-                <li><NavLink to='/about'>About</NavLink></li>
-                <li><NavLink to='/contact'>Contact</NavLink></li>
-            </ul>
-        </nav>
-        </header>
-    <section>Home Page</section>
-    </>
-  )
+    return (
+        <>
+            <Hello></Hello>
+            <section>Home Page</section>
+        </>
+    )
 }
 
 export default Home;
