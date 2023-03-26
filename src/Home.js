@@ -6,7 +6,6 @@ const Home = () => {
     return (
         <>
             <Hello></Hello>
-            <section><h1>Home Page Only</h1></section>
             <Outlet></Outlet>
         </>
     )
